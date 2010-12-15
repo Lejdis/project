@@ -1,4 +1,4 @@
->>> Druøyna <<<
+Ôªø>>> Dru≈ºyna <<<
 
 -Natalia Andrzejak
 -Aleksandra Bucior
@@ -7,29 +7,29 @@
 
 >>> Wprowadzenie<<<
 
-Dokument dotyczy projektu realizowanego w ramach zajÍÊ z Architektury serwisÛw internetowych. 
-Niniejszy dokument s≥uøy przedstawieniu przeznaczenia tworzonego systemu, jego g≥Ûwnych cech i przyjÍtych za≥oøeÒ.
+Dokument dotyczy projektu realizowanego w ramach zajƒôƒá z Architektury serwis√≥w internetowych. 
+Niniejszy dokument s≈Çu≈ºy przedstawieniu przeznaczenia tworzonego systemu, jego g≈Ç√≥wnych cech i przyjƒôtych za≈Ço≈ºe≈Ñ.
 
 >>> Cel <<<
 
-Celem projektu jest stworzenie serwisu na styl popularnego portalu "Filmweb" , umoøliwiajπcego ocene filmÛw ich dodawanie oraz komentowanie.
+Celem projektu jest stworzenie serwisu na styl popularnego portalu "Filmweb" , umo≈ºliwiajƒÖcego ocene film√≥w ich dodawanie oraz komentowanie.
 
 >>> Rynek <<< 
-Serwis jest skierowany do wszystkich uøytkownikÛw lubiπcych kino. Chcπcych podzieliÊ siÍ swoimi wraøeniami oraz poznaÊ opinie przed obejrzeniem 
-jakiegoú filmu.
+Serwis jest skierowany do wszystkich u≈ºytkownik√≥w lubiƒÖcych kino. ChcƒÖcych podzieliƒá siƒô swoimi wra≈ºeniami oraz poznaƒá opinie przed obejrzeniem 
+jakiego≈õ filmu.
 
 >>> Wizja projektu <<<
 
-- moøliwoúÊ dodawanie opisÛw filmÛw
+- mo≈ºliwo≈õƒá dodawanie opis√≥w film√≥w
 	- nazwa filmu
-	- reøyser
+	- re≈ºyser
 	- aktorzy
-	-zdjÍcia /klatki z filmÛw
+	-zdjƒôcia /klatki z film√≥w
 	
 - logowanie
 - walidacja
-- wyszukiwanie filmÛw po tytule, kategorii i nazwisku reøysera
-- komentowanie filmÛw
+- wyszukiwanie film√≥w po tytule, kategorii i nazwisku re≈ºysera
+- komentowanie film√≥w
 - dodawanie ocen
 
 
