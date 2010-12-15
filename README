@@ -1,4 +1,35 @@
+>>> Dru¿yna <<<
+
 -Natalia Andrzejak
 -Aleksandra Bucior
 -Dorota Piotrowska
 -Dorota Sajdak
+
+>>> Wprowadzenie<<<
+
+Dokument dotyczy projektu realizowanego w ramach zajêæ z Architektury serwisów internetowych. 
+Niniejszy dokument s³u¿y przedstawieniu przeznaczenia tworzonego systemu, jego g³ównych cech i przyjêtych za³o¿eñ.
+
+>>> Cel <<<
+
+Celem projektu jest stworzenie serwisu na styl popularnego portalu "Filmweb" , umo¿liwiaj¹cego ocene filmów ich dodawanie oraz komentowanie.
+
+>>> Rynek <<< 
+Serwis jest skierowany do wszystkich u¿ytkowników lubi¹cych kino. Chc¹cych podzieliæ siê swoimi wra¿eniami oraz poznaæ opinie przed obejrzeniem 
+jakiegoœ filmu.
+
+>>> Wizja projektu <<<
+
+- mo¿liwoœæ dodawanie opisów filmów
+	- nazwa filmu
+	- re¿yser
+	- aktorzy
+	-zdjêcia /klatki z filmów
+	
+- logowanie
+- walidacja
+- wyszukiwanie filmów po tytule, kategorii i nazwisku re¿ysera
+- komentowanie filmów
+- dodawanie ocen
+
+
