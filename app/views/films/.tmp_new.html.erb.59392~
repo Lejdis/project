@@ -1,0 +1,5 @@
+<h1>Dodawanie</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Cofnij', films_path %>

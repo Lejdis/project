@@ -1,0 +1,10 @@
+pl:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} dodano do bazy.'
+      update:
+        notice: '%{resource_name} wyedytowano.'
+      destroy:
+        notice: '%{resource_name} usunieto'
+        alert: 'nie można usunąć'

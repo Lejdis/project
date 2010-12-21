@@ -1,0 +1,5 @@
+pl:
+  helpers:
+    submit:
+      create: "Utwórz "
+      update: "Uaktualnij"

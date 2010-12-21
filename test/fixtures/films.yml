@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tytul: MyString
+  rezyseria: MyString
+  scenariusz: MyString
+  obsada: MyText
+  data_premiery: MyString
+  kraj_produkcji: MyString
+  opis_filmu: MyText
+
+two:
+  tytul: MyString
+  rezyseria: MyString
+  scenariusz: MyString
+  obsada: MyText
+  data_premiery: MyString
+  kraj_produkcji: MyString
+  opis_filmu: MyText

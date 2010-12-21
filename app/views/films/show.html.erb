@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tytul:</b>
+  <%= @film.tytul %>
+</p>
+
+<p>
+  <b>Rezyseria:</b>
+  <%= @film.rezyseria %>
+</p>
+
+<p>
+  <b>Scenariusz:</b>
+  <%= @film.scenariusz %>
+</p>
+
+<p>
+  <b>Obsada:</b>
+  <%= @film.obsada %>
+</p>
+
+<p>
+  <b>Data premiery:</b>
+  <%= @film.data_premiery %>
+</p>
+
+<p>
+  <b>Kraj produkcji:</b>
+  <%= @film.kraj_produkcji %>
+</p>
+
+<p>
+  <b>Opis filmu:</b>
+  <%= @film.opis_filmu %>
+</p>
+
+
+<%= link_to 'Edytuj', edit_film_path(@film) %> |
+<%= link_to 'Cofnij', films_path %>

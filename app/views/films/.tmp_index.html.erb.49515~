@@ -1,0 +1,28 @@
+<div>
+<%= form_tag films_path, :method => 'get' do %>  
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Szukaj", :name => nil %>  
+  <% end %>
+</div>
+<h1>Filmy</h1>
+<table>
+  <tr>
+    <th>Tytul</th>
+    <th>Rezyseria</th>
+   
+  </tr>
+
+<% @films.each do |film| %>
+  <tr>
+    <td><%= film.tytul %></td>
+    <td><%= film.rezyseria %></td>
+    <td><%= link_to 'Pokaż', film %></td>
+    <td><%= link_to 'Edytuj', edit_film_path(film) %></td>
+    <td><%= link_to 'Usuń', film, :confirm => 'Czy aby napewno ?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Dodaj film', new_film_path %>
