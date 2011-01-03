@@ -1,12 +1,15 @@
-<p id="notice"><%= notice %></p>
+﻿
+<p>
+  <%= image_tag @film.photo.url(:small) %>
+</p>
 
 <p>
-  <b>Tytul:</b>
+  <b>Tytuł:</b>
   <%= @film.tytul %>
 </p>
 
 <p>
-  <b>Rezyseria:</b>
+  <b>Reżyseria:</b>
   <%= @film.rezyseria %>
 </p>
 

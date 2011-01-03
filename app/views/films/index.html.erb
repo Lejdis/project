@@ -1,4 +1,4 @@
-<div>
+﻿<div>
 <%= form_tag films_path, :method => 'get' do %>  
     <%= text_field_tag :search, params[:search] %>  
     <%= submit_tag "Szukaj", :name => nil %>  
@@ -7,13 +7,15 @@
 <h1>Filmy</h1>
 <table>
   <tr>
-    <th>Tytul</th>
-    <th>Rezyseria</th>
+    <th></th>
+    <th>Tytuł</th>
+    <th>Reżyseria</th>
    
   </tr>
 
 <% @films.each do |film| %>
   <tr>
+    <td><%= image_tag film.photo.url(:small) %> </td>
     <td><%= film.tytul %></td>
     <td><%= film.rezyseria %></td>
     <td><%= link_to 'Pokaż', film %></td>
