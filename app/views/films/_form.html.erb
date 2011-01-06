@@ -1,11 +1,13 @@
 ﻿<%= form_for @film , :html => { :multipart => true } do |f| %>
   <% if @film.errors.any? %>
     <div id="error_explanation">
-      <h2> Film nie może być zapisany, ponieważ:</h2>
+   
+   <h2> Film nie może być zapisany, ponieważ:</h2>
 
       <ul>
       <% @film.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      
+  <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
@@ -13,43 +15,63 @@
 
   <div class="field">
     <%= f.label :tytuł %><br />
-    <%= f.text_field :tytul %>
+   
+ <%= f.text_field :tytul %>
+  </div>
+   <div class="field">
+    <%= f.label :tytuł_orginalny %><br />
+ 
+   <%= f.text_field :tytul_orginalny %>
   </div>
   <div class="field">
     <%= f.label :reżyseria %><br />
-    <%= f.text_field :rezyseria %>
+  
+  <%= f.text_field :rezyseria %>
   </div>
   <div class="field">
     <%= f.label :scenariusz %><br />
-    <%= f.text_field :scenariusz %>
+  
+  <%= f.text_field :scenariusz %>
   </div>
   <div class="field">
     <%= f.label :obsada %><br />
-    <%= f.text_area :obsada %>
+   
+ <%= f.text_area :obsada, :rows => 5 %>
   </div>
   <div class="field">
     <%= f.label :data_premiery %><br />
-    <%= f.text_field :data_premiery %>
+   
+ <%= f.text_field :data_premiery %>
   </div>
+ <div class="field">
+    <%= f.label :data_premiery %><br />
+    <%= f.text_field :data %>
+
+  </div>
+ 
   <div class="field">
     <%= f.label :kraj_produkcji %><br />
     <%= f.text_field :kraj_produkcji %>
   </div>
-  <div class="field">
+ 
+ <div class="field">
     <%= f.label :opis_filmu %><br />
-    <%= f.text_area :opis_filmu %>
+    <%= f.text_area :opis_filmu, :rows => 5 %>
   </div>
 
-
-    <div class="field">
+ 
+   <div class="field">
     <%= f.label :kategoria %><br/>
-    <%= f.text_field :tag_list %>
+   
+<%= f.select :tag_list, ['romans', 'western', 'komedia', 'horror', 'bajka', 'sensacja'] %>
   </div>
 
   <div class="field">
-    <%= f.file_field :photo %>
+   
+ <%= f.file_field :photo %>
  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

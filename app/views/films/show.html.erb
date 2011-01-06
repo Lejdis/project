@@ -3,9 +3,23 @@
   <%= image_tag @film.photo.url(:small) %>
 </p>
 
+
+
+<p>
+  
+<b>Kategoria:</b>
+  <%= @film.tag_list %>
+</p>
+
 <p>
   <b>Tytuł:</b>
   <%= @film.tytul %>
+</p>
+
+<p>
+  <b>Tytuł orginalny:</b>
+ 
+ <%= @film.tytul_orginalny %>
 </p>
 
 <p>
@@ -26,6 +40,11 @@
 <p>
   <b>Data premiery:</b>
   <%= @film.data_premiery %>
+</p>
+
+<p>
+  <b>Data premiery:</b>
+  <%= @film.data %>
 </p>
 
 <p>

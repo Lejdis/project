@@ -10,13 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110105182902) do
+ActiveRecord::Schema.define(:version => 20110106190339) do
 
   create_table "comments", :force => true do |t|
     t.integer  "film_id"
     t.string   "author"
     t.text     "body"
-    t.date     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20110105182902) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.date     "data"
+    t.string   "tytul_orginalny"
   end
 
   create_table "taggings", :force => true do |t|

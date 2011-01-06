@@ -1,4 +1,5 @@
-﻿<div>
+﻿
+<div>
 <%= form_tag films_path, :method => 'get' do %>  
     
     <%= text_field_tag :search, params[:search] %>  
@@ -25,12 +26,14 @@
   </tr>
 <% end %>
 </table>
-<p>Tags: 
+<p>Kategorie: 
 <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
   <%= link_to tag.name, tags_films_path(:name=>tag.name), :class => css_class %>
   
 <% end %>
 </p>
+
+
 <br />
 
 <%= link_to 'Dodaj film', new_film_path %>
