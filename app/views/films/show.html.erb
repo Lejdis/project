@@ -39,5 +39,30 @@
 </p>
 
 
+<% if @film.comments.any? %>
+  <h2>Komentarze</h2>
+  <% @film.comments.each do |comment| %>
+   <p>Autor:<br><%= comment.author %></p>
+    <p>Dodano:<br><%= comment.created_at %></p>
+   <div class="comment">
+     <b>Tekst:</b> <%= comment.body %>
+        </div>
+   <%= link_to "Usuń komentarz", [@fortune, comment], :confirm => "Czy aby napewno?", :method => :delete %>
+  <% end %>
+<% end %>
+
+<h2>Dodaj komentarz</h2>
+<%= form_for [@film, @film.comments.build] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :author, "Autor" %><br>
+    <%= f.text_field :author %>
+  </p>
+  <p><%= f.text_area :body, :rows => 4 %></p>
+   <p><%= f.submit %></p>
+<% end %>
+<br/><br/>
+
+
 <%= link_to 'Edytuj', edit_film_path(@film) %> |
 <%= link_to 'Cofnij', films_path %>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Filmweb" %></title>
@@ -8,6 +8,16 @@
     <%= yield(:head) %>
   </head>
   <body>
+<div id="user_nav">  
+  <% if user_signed_in? %>  
+    Zalogowany jako <%= current_user.email %>. To nie Ty?  
+    <%= link_to "Wyloguj", destroy_user_session_path %>  
+  <% else %>  
+   
+<%= link_to_rpx "Zaloguj", user_session_url %>
+  <% end %>  
+</div>  
+
     <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
@@ -15,5 +25,6 @@
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>
+<%= javascript_include_rpx(user_session_url) %> 
   </body>
 </html>

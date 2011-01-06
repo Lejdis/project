@@ -38,5 +38,6 @@ module Filmweb
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+config.secret_token = "49dd7367aaafd4ab089da4c93c0ec07da5cc6378f3c5d241ae4d92cc991ea863122d0d93f8cf36f56d614b287f52df51764ed61e4caa64edc40c8d186be5aa52"
   end
 end

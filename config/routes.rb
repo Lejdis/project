@@ -1,5 +1,14 @@
 Filmweb::Application.routes.draw do
-  resources :films
+  devise_for :users
+
+  resources :comments
+
+  resources :films do
+   resources :comments
+   collection do 
+    get :tags
+  end
+ end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

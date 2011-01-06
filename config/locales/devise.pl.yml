@@ -1,0 +1,41 @@
+pl:
+  errors:
+    messages:
+      not_found: "nie znaleziono"
+      already_confirmed: "ju¿ potwierdzony"
+      not_locked: "nie zablokowany"
+
+  devise:
+    failure:
+      unauthenticated: 'Musisz siê zalogowaæ lub zarejestrowaæ, aby kontynuowaæ.'
+      unconfirmed: 'Musisz zatwierdziæ swoje konto, aby kontynuowaæ.'
+      locked: 'Twoje konto jest zablokowane.'
+      invalid: 'Nieprawid³owy email lub has³o.'
+      invalid_token: 'Nieprawid³owy token.'
+      timeout: 'Twoja sesja wygas³a, zaloguj siê, aby kontynuowaæ.'
+      inactive: 'Twoje konto nie jest jeszcze aktywowane.'
+    sessions:
+      signed_in: 'Zalogowano.'
+      signed_out: 'Wylogowano.'
+      rpx_invalid: "Nie mo¿na zalogowaæ."
+    passwords:
+      send_instructions: 'Otrzymasz email z instrukcjami, jak zresetowaæ swoje has³o, w ci¹gu kilku minut.'
+      updated: 'Has³o zosta³o zmienione. Jesteœ zalogowany.'
+    confirmations:
+      send_instructions: 'Otrzymasz email z instrukcjami, jak potwierdziæ swoje konto, w ci¹gu kilku minut.'
+      confirmed: 'Twoje konto zosta³o zatwierdzone. Jesteœ zalogowany.'
+    registrations:
+      sign_up: 'Zarejestruj'
+      signed_up: 'Zarejestrowano. Potwierdzenie zosta³o wys³ane na email.'
+      updated: 'Uaktualni³eœ swoje konto.'
+      destroyed: 'Nara! Konto anulowano. Dozoba.'
+    unlocks:
+      send_instructions: 'Otrzymasz email z instrukcjami, jak odblokowac swoje konto, w ci¹gu kilku minut.'
+      unlocked: 'Konto odblokowane. Jesteœ zalogowany.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instrukcja potwierdzenia'
+      reset_password_instructions:
+        subject: 'Instrukcja zresetowania has³a'
+      unlock_instructions:
+        subject: 'Instrukcja odblokowania'

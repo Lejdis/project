@@ -30,3 +30,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 gem 'responders'
 gem 'nifty-generators'
+gem 'acts-as-taggable-on'
+gem 'ajaxful_rating'
+gem 'devise'
+gem 'devise_rpx_connectable'

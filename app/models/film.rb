@@ -1,7 +1,13 @@
 class Film < ActiveRecord::Base
+
+ has_many :comments, :dependent => :destroy
+
      def self.search(query)
   where("(tytul || rezyseria) like ?", "%#{query}%")
 end
+
+acts_as_taggable_on :tags
+  ActsAsTaggableOn::TagList.delimiter = " "
 
  has_attached_file :photo, :styles => { :small => "150x150>" },
                   :url  => "/assets/films/:id/:style/:basename.:extension",

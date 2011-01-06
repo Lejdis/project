@@ -2,12 +2,23 @@ class FilmsController < ApplicationController
   # GET /films
   # GET /films.xml
   
+before_filter :only => [:index, :tags] do
+  @tags = Film.tag_counts  # for tag clouds    
+end
+
   def index
+
 @films = Film.search(params[:search]).order("created_at desc")
 respond_to do |format|format.html
 format.xml { render :xml => @films }
 end
 end
+
+def tags
+  @films = Film.tagged_with(params[:name])
+  render 'index'
+end
+
   # GET /films/1
   # GET /films/1.xml
   def show
