@@ -31,10 +31,10 @@
   <%= link_to tag.name, tags_films_path(:name=>tag.name), :class => css_class %>
   
 <% end %>
+<%= link_to 'Pokaż wszystkie', films_path %>
 </p>
 
 
 <br />
 
 <%= link_to 'Dodaj film', new_film_path %>
-<%= link_to 'Pokaż wszystkie', films_path %>

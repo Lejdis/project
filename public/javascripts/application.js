@@ -1,2 +1,28 @@
-// Place your application-specific JavaScript functions and classes here
+﻿// Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
+
+$(function (){  
+    $('#film_data').datepicker();
+
+
+$.datepicker.regional['pl'] = {
+		closeText: 'Zamknij',
+		prevText: '&#x3c;Poprzedni',
+		nextText: 'Następny&#x3e;',
+		currentText: 'Dziś',
+		monthNames: ['Styczeń','Luty','Marzec','Kwiecień','Maj','Czerwiec',
+		'Lipiec','Sierpień','Wrzesień','Październik','Listopad','Grudzień'],
+		monthNamesShort: ['Sty','Lu','Mar','Kw','Maj','Cze',
+		'Lip','Sie','Wrz','Pa','Lis','Gru'],
+		dayNames: ['Niedziela','Poniedzialek','Wtorek','Środa','Czwartek','Piątek','Sobota'],
+		dayNamesShort: ['Nie','Pn','Wt','Śr','Czw','Pt','So'],
+		dayNamesMin: ['N','Pn','Wt','Śr','Cz','Pt','So'],
+		weekHeader: 'Tydz',
+		dateFormat: 'yy-mm-dd',
+		firstDay: 1,
+		isRTL: false,
+		showMonthAfterYear: false,
+		yearSuffix: ''};
+	$.datepicker.setDefaults($.datepicker.regional['pl']);
+
+});

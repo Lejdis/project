@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @film.comments.new params[:comment]
     @comment.save
-    respond_with @comment, :location => films_url
+    respond_with  @film
   end
 
   def destroy

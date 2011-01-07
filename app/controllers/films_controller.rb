@@ -43,7 +43,7 @@ end
   def create
     @film = Film.new(params[:film])
     @film.save
-    respond_with(@film)
+    respond_with Film
   end
 
   # PUT /films/1
@@ -51,7 +51,7 @@ end
   def update
     @film = Film.find(params[:id])
     @film.update_attributes(params[:film])
-    respond_with(@film)
+    respond_with @film
   end
 
   # DELETE /films/1

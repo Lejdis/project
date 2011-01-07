@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110106190339) do
+ActiveRecord::Schema.define(:version => 20110107004333) do
 
   create_table "comments", :force => true do |t|
     t.integer  "film_id"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20110106190339) do
     t.string   "rezyseria"
     t.string   "scenariusz"
     t.text     "obsada"
-    t.string   "data_premiery"
     t.string   "kraj_produkcji"
     t.text     "opis_filmu"
     t.datetime "created_at"

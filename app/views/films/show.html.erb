@@ -37,10 +37,6 @@
   <%= @film.obsada %>
 </p>
 
-<p>
-  <b>Data premiery:</b>
-  <%= @film.data_premiery %>
-</p>
 
 <p>
   <b>Data premiery:</b>
@@ -66,7 +62,7 @@
    <div class="comment">
      <b>Tekst:</b> <%= comment.body %>
         </div>
-   <%= link_to "Usuń komentarz", [@fortune, comment], :confirm => "Czy aby napewno?", :method => :delete %>
+   <%= link_to "Usuń komentarz", [@film, comment], :confirm => "Czy aby napewno?", :method => :delete %>
   <% end %>
 <% end %>
 
