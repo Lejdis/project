@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_filter do
+ before_filter :authenticate_user! 
+ before_filter do
     @film = Film.find params[:film_id]
   end
 

@@ -21,8 +21,10 @@
     <td><%= film.tytul %></td>
     <td><%= film.rezyseria %></td>
     <td><%= link_to 'Pokaż', film %></td>
+<% if user_signed_in? %> 
     <td><%= link_to 'Edytuj', edit_film_path(film) %></td>
     <td><%= link_to 'Usuń', film, :confirm => 'Czy aby napewno ?', :method => :delete %></td>
+ <% end %> 
   </tr>
 <% end %>
 </table>
@@ -36,5 +38,6 @@
 
 
 <br />
-
+<% if user_signed_in? %> 
 <%= link_to 'Dodaj film', new_film_path %>
+<% end %>

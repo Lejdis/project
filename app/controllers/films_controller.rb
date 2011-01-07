@@ -2,6 +2,7 @@ class FilmsController < ApplicationController
   # GET /films
   # GET /films.xml
   
+before_filter :authenticate_user!, :except => [:show, :index, :tags]  
 before_filter :only => [:index, :tags] do
   @tags = Film.tag_counts  # for tag clouds    
 end

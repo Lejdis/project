@@ -2,40 +2,38 @@ pl:
   errors:
     messages:
       not_found: "nie znaleziono"
-      already_confirmed: "ju¿ potwierdzony"
-      not_locked: "nie zablokowany"
+      already_confirmed: "was already confirmed"
+      not_locked: "nie zablokowano"
 
   devise:
     failure:
-      unauthenticated: 'Musisz siê zalogowaæ lub zarejestrowaæ, aby kontynuowaæ.'
-      unconfirmed: 'Musisz zatwierdziæ swoje konto, aby kontynuowaæ.'
-      locked: 'Twoje konto jest zablokowane.'
-      invalid: 'Nieprawid³owy email lub has³o.'
-      invalid_token: 'Nieprawid³owy token.'
-      timeout: 'Twoja sesja wygas³a, zaloguj siê, aby kontynuowaæ.'
-      inactive: 'Twoje konto nie jest jeszcze aktywowane.'
+      unauthenticated: 'Musisz sie zalogowac lub zarejestrowac, zeby kontynuowac.'
+      unconfirmed: 'You have to confirm your account before continuing.'
+      locked: 'Your account is locked.'
+      invalid: 'Nieprawidlowy email lub haslo.'
+      invalid_token: 'Invalid authentication token.'
+      timeout: 'Twoja sesja wygasla, zaloguj sie ponownie.'
+      inactive: 'Your account was not activated yet.'
     sessions:
       signed_in: 'Zalogowano.'
       signed_out: 'Wylogowano.'
-      rpx_invalid: "Nie mo¿na zalogowaæ."
     passwords:
-      send_instructions: 'Otrzymasz email z instrukcjami, jak zresetowaæ swoje has³o, w ci¹gu kilku minut.'
-      updated: 'Has³o zosta³o zmienione. Jesteœ zalogowany.'
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
     confirmations:
-      send_instructions: 'Otrzymasz email z instrukcjami, jak potwierdziæ swoje konto, w ci¹gu kilku minut.'
-      confirmed: 'Twoje konto zosta³o zatwierdzone. Jesteœ zalogowany.'
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
     registrations:
-      sign_up: 'Zarejestruj'
-      signed_up: 'Zarejestrowano. Potwierdzenie zosta³o wys³ane na email.'
-      updated: 'Uaktualni³eœ swoje konto.'
-      destroyed: 'Nara! Konto anulowano. Dozoba.'
+      signed_up: 'You have signed up successfully. If enabled, a confirmation was sent to your e-mail.'
+      updated: 'You updated your account successfully.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
     unlocks:
-      send_instructions: 'Otrzymasz email z instrukcjami, jak odblokowac swoje konto, w ci¹gu kilku minut.'
-      unlocked: 'Konto odblokowane. Jesteœ zalogowany.'
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
     mailer:
       confirmation_instructions:
-        subject: 'Instrukcja potwierdzenia'
+        subject: 'Confirmation instructions'
       reset_password_instructions:
-        subject: 'Instrukcja zresetowania has³a'
+        subject: 'Reset password instructions'
       unlock_instructions:
-        subject: 'Instrukcja odblokowania'
+        subject: 'Unlock Instructions'

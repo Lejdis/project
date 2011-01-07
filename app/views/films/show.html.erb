@@ -62,16 +62,19 @@
    <div class="comment">
      <b>Tekst:</b> <%= comment.body %>
         </div>
+<% if comment.author == current_user.email %>
    <%= link_to "Usuń komentarz", [@film, comment], :confirm => "Czy aby napewno?", :method => :delete %>
+<% end %>
   <% end %>
 <% end %>
-
+<br/>
+<% if user_signed_in? %>
 <h2>Dodaj komentarz</h2>
 <%= form_for [@film, @film.comments.build] do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :author, "Autor" %><br>
-    <%= f.text_field :author %>
+    <%= f.text_field :author, :value=> current_user.email %>
   </p>
   <p><%= f.text_area :body, :rows => 4 %></p>
    <p><%= f.submit %></p>
@@ -80,4 +83,5 @@
 
 
 <%= link_to 'Edytuj', edit_film_path(@film) %> |
+<% end %>
 <%= link_to 'Cofnij', films_path %>
