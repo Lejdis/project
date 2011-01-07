@@ -57,15 +57,20 @@
 <% if @film.comments.any? %>
  
  <% @film.comments.each do |comment| %>
-   <p>Autor:<br><%= comment.author %></p>
+  
+ <p>Autor:<br><%= comment.author %></p>
     <p>Dodano:<br><%= comment.created_at %></p>
    <div class="comment">
      <b>Tekst:</b> <%= comment.body %>
         </div>
+<% if user_signed_in? %>
   <% if comment.author == current_user.email %>
     <%= link_to "Usuń komentarz", [@film, comment], :confirm => "Czy aby napewno?", :method => :delete %>
   <% end %>
+<% end %>
+
  <% end %>
+
 <% else %>
 <p> Narazie żadnych komentarzy. </p>
 <% end %>
