@@ -1,4 +1,4 @@
-﻿
+
 <p>
   <%= image_tag @film.photo.url(:small) %>
 </p>
@@ -52,20 +52,20 @@
   <b>Opis filmu:</b>
   <%= @film.opis_filmu %>
 </p>
-
+<div class="rw-ui-container rw-urid-0"></div>
  <h2>Komentarze</h2>
 <% if @film.comments.any? %>
  
  <% @film.comments.each do |comment| %>
-  
- <p>Autor:<br><%= comment.author %></p>
+  <%= image_tag comment.gravatar_url %>
+ <p>Autor:<br><%= comment.email %></p>
     <p>Dodano:<br><%= comment.created_at %></p>
    <div class="comment">
      <b>Tekst:</b> <%= comment.body %>
         </div>
 <% if user_signed_in? %>
-  <% if comment.author == current_user.email %>
-    <%= link_to "Usuń komentarz", [@film, comment], :confirm => "Czy aby napewno?", :method => :delete %>
+  <% if comment.email == current_user.email %>
+    <%= link_to "Usuń komentarz", [@film, comment], :confirm => "Czy aby napewno?", :method => :delete %><br/>
   <% end %>
 <% end %>
 
@@ -81,8 +81,9 @@
 <%= form_for [@film, @film.comments.build] do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :author, "Autor" %><br>
-    <%= f.text_field :author, :value=> current_user.email %>
+   <%= image_tag current_user.gravatar_url %>
+    <%= f.label :email, "Autor" %><br>
+    <%= f.text_field :email, :value=> current_user.email, :readonly=> true %>
   </p>
   <p><%= f.text_area :body, :rows => 4 %></p>
    <p><%= f.submit %></p>

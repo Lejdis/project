@@ -43,7 +43,6 @@ end
   # POST /films.xml
   def create
     @film = Film.new(params[:film])
-<<<<<<< HEAD
 	
 	    respond_to do |format|
       if @film.save
@@ -55,10 +54,6 @@ end
       end
     end
 	
-=======
-    @film.save
-    respond_with Film
->>>>>>> ef25687cb52f2e47778fc37f12bf07aab7e3eb80
   end
 
   # PUT /films/1
