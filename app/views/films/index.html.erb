@@ -1,43 +1,38 @@
-﻿
-<div>Wyszukaj po tytule lub reżyserze:
-<%= form_tag films_path, :method => 'get' do %>  
-    
-    <%= text_field_tag :search, params[:search] %>  
-    <%= submit_tag "Szukaj", :name => nil %>  
-  <% end %>
-</div>
-<h1>Filmy</h1>
-<table>
-  <tr>
-    <th></th>
-    <th>Tytuł</th>
-    <th>Reżyseria</th>
-   
-  </tr>
-
-<% @films.each do |film| %>
-  <tr>
-    <td><%= image_tag film.photo.url(:small) %> </td>
-    <td><%= film.tytul %></td>
-    <td><%= film.rezyseria %></td>
-    <td><%= link_to 'Pokaż', film %></td>
-<% if user_signed_in? %> 
-    <td><%= link_to 'Edytuj', edit_film_path(film) %></td>
-    <td><%= link_to 'Usuń', film, :confirm => 'Czy aby napewno ?', :method => :delete %></td>
- <% end %> 
-  </tr>
-<% end %>
-</table>
-<p>Kategorie: 
+﻿ <div style="z-index:1; left: 5px; top:375px; width:160px; position: absolute;">
+<br /><br />
+ <div class="nav">Kategorie filmów</div>
 <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
   <%= link_to tag.name, tags_films_path(:name=>tag.name), :class => css_class %>
-  
 <% end %>
-<%= link_to 'Pokaż wszystkie', films_path %>
-</p>
+</div>  
+ <div style="z-index:1; left: 40px; top:136px; width:160px; position: absolute;">
+ <% if user_signed_in? %> 
+<%= link_to image_tag("film.png"), new_film_path %> 
+<% end %>
+ </div>
+  <div style="z-index:1; left: 800px; top:248px; width:160px; position: absolute;">
+<%= link_to image_tag("all.png"), films_path %> 
+ </div>
+<div class = "content">
+<% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+<% @films.each do |film| %>
+<table>
+  <tr>
+    <td><center><%= image_tag film.photo.url(:small) %></center> </td>
+    <td>
+	<h3> <%= film.tytul %></h3><br />
+ <b>Reżyseria</b> <%= film.rezyseria %><br />
+ <b>Scenariusz</b> <%= film.rezyseria %><br />
+</td>		
+<td>
+<%= link_to image_tag("more.png"), film %> 
+	</td>
+	</tr>
+</table>
+<% end %>
 
 
-<br />
-<% if user_signed_in? %> 
-<%= link_to 'Dodaj film', new_film_path %>
-<% end %>
+</div>
+<img src = "../images/3.jpg">

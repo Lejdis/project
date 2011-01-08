@@ -1,4 +1,12 @@
-
+  <div style="z-index:1; left: 40px; top:136px; width:160px; position: absolute;">
+ <% if user_signed_in? %> 
+<%= link_to image_tag("film.png"), new_film_path %> 
+<% end %>
+ </div>
+ <div style="z-index:1; left: 800px; top:248px; width:160px; position: absolute;">
+<%= link_to image_tag("all.png"), films_path %> 
+ </div>
+<div style="z-index:1; left: 170px; top:556px; width:740px; position: absolute;">
 <p>
   <%= image_tag @film.photo.url(:small) %>
 </p>
@@ -94,3 +102,4 @@
 <%= link_to 'Edytuj', edit_film_path(@film) %> |
 <% end %>
 <%= link_to 'Cofnij', films_path %>
+</div>

@@ -13,7 +13,7 @@ end
 acts_as_taggable_on :tags
   ActsAsTaggableOn::TagList.delimiter = " "
 
- has_attached_file :photo, :styles => { :small => "150x150>" },
+ has_attached_file :photo, :styles => { :small => "100x100>" },
                   :url  => "/assets/films/:id/:style/:basename.:extension",
                   :path => ":rails_root/public/assets/films/:id/:style/:basename.:extension"
 

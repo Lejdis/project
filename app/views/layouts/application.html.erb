@@ -9,23 +9,30 @@
     <%= yield(:head) %>
   </head>
   <body>
-<div id="user_nav">  
+<div class="top">
+<div style="z-index:1; left:610px; top:210px; position: absolute;"> 
   <% if user_signed_in? %>  
-    Zalogowany jako <%= current_user.email %>. To nie Ty?  
+<br> Zalogowany jako <%= current_user.email %>. <br>To nie Ty?  
     <%= link_to "Wyloguj", destroy_user_session_path %>  
   <% else %>  
    
-<%= link_to_rpx "Zaloguj", user_session_url %><!--%= link_to "Sign in", new_user_session_path %--!>
+<h2><%= link_to_rpx "Logowanie", user_session_url %><!--%= link_to "Sign in", new_user_session_path %--!> </h2>
   <% end %>  
-</div>  
+  </div>
+  <div style="z-index:1; left: 272px; top:310px; position: absolute;"> 
+<p>Wyszukaj po tytule lub reżyserze:</p>
+<%= form_tag films_path, :method => 'get' do %>  
+    
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Szukaj", :name => nil %>  
+  <% end %>
+  </div>
+</div>
 
-    <div id="container">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
+
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
-    </div>
+  
 <%= javascript_include_rpx(user_session_url) %> 
   </body>
 </html>
