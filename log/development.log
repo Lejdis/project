@@ -243,3 +243,79 @@ Started GET "/films/1" for 127.0.0.1 at 2011-01-08 22:50:39 +0100
   [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".film_id = 1)[0m
 Rendered films/show.html.erb within layouts/application (218.0ms)
 Completed 200 OK in 393ms (Views: 265.0ms | ActiveRecord: 7.0ms)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: C:/Users/Dodzia/Nowy folder/project/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at C:/Users/Dodzia/Nowy folder/project/config/environment.rb:5)
+
+
+Started GET "/films" for 127.0.0.1 at 2011-01-09 23:32:23 +0100
+  Processing by FilmsController#index as HTML
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mFilm Load (0.0ms)[0m  SELECT "films".* FROM "films" LIMIT 5 OFFSET 0
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN films ON films.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Film') AND (taggings.taggable_id IN(SELECT films.id FROM "films")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered films/index.html.erb within layouts/application (194.0ms)
+Completed 200 OK in 445ms (Views: 246.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/films/1" for 127.0.0.1 at 2011-01-09 23:32:37 +0100
+  Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mFilm Load (1.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE ("films"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 1)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".film_id = 1)
+  [1m[36mActsAsTaggableOn::Tag Load (2.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'Film')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+Rendered films/show.html.erb within layouts/application (737.0ms)
+Completed 200 OK in 1029ms (Views: 818.0ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/films/1/comments" for 127.0.0.1 at 2011-01-09 23:32:50 +0100
+  Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RuYw5HIPriOOkmutSBtE9ykszMc2qD/cfEopOsKZQn0=", "comment"=>{"email"=>"dodziapio@gmail.com", "body"=>"gugu"}, "commit"=>"Utwórz ", "film_id"=>"1"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mFilm Load (1.0ms)[0m  SELECT "films".* FROM "films" WHERE ("films"."id" = 1) LIMIT 1
+  [1m[36mAREL (195.0ms)[0m  [1mINSERT INTO "comments" ("film_id", "author", "body", "created_at", "updated_at", "email") VALUES (1, NULL, 'gugu', '2011-01-09 22:32:50.660659', '2011-01-09 22:32:50.660659', 'dodziapio@gmail.com')[0m
+Redirected to http://localhost:3000/films/1
+Completed 302 Found in 1441ms
+
+
+Started GET "/films/1" for 127.0.0.1 at 2011-01-09 23:32:51 +0100
+  Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mFilm Load (1.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE ("films"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 1)[0m
+  [1m[35mComment Load (2.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".film_id = 1)
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'Film')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+Rendered films/show.html.erb within layouts/application (243.0ms)
+Completed 200 OK in 388ms (Views: 295.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/films/1/edit" for 127.0.0.1 at 2011-01-09 23:32:56 +0100
+  Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mFilm Load (1.0ms)[0m  SELECT "films".* FROM "films" WHERE ("films"."id" = 1) LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 1) AND ("taggings".taggable_type = 'Film')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+Rendered films/_form.html.erb (63.0ms)
+Rendered films/edit.html.erb within layouts/application (95.0ms)
+Completed 200 OK in 431ms (Views: 162.0ms | ActiveRecord: 5.0ms)

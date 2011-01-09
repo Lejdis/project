@@ -6,75 +6,43 @@
  <div style="z-index:1; left: 800px; top:248px; width:160px; position: absolute;">
 <%= link_to image_tag("all.png"), films_path %> 
  </div>
-<div style="z-index:1; left: 170px; top:556px; width:740px; position: absolute;">
-<p>
-  <%= image_tag @film.photo.url(:small) %>
-</p>
+<div style="z-index:1; left: 180px; top:556px; width:740px; position: absolute; ">
 
+<h4><%= @film.tytul %></h4>
 
-
-<p>
-  
-<b>Kategoria:</b>
-  <%= @film.tag_list %>
-</p>
-
-<p>
-  <b>Tytuł:</b>
-  <%= @film.tytul %>
-</p>
-
-<p>
-  <b>Tytuł orginalny:</b>
- 
- <%= @film.tytul_orginalny %>
-</p>
-
-<p>
-  <b>Reżyseria:</b>
-  <%= @film.rezyseria %>
-</p>
-
-<p>
-  <b>Scenariusz:</b>
-  <%= @film.scenariusz %>
-</p>
-
-<p>
-  <b>Obsada:</b>
-  <%= @film.obsada %>
-</p>
-
-
-<p>
-  <b>Data premiery:</b>
-  <%= @film.data %>
-</p>
-
-<p>
-  <b>Kraj produkcji:</b>
-  <%= @film.kraj_produkcji %>
-</p>
-
+</div>
+<div style="z-index:1; left: 180px; top:620px; width:700px; position: absolute;">
+<%= image_tag @film.photo.url(:small) %>
+<div class="opis">
 <p>
   <b>Opis filmu:</b>
   <%= @film.opis_filmu %>
-</p>
+ </p> </div>
+<center>
+<%= link_to image_tag("edit.png"), edit_film_path(@film) %>  <%= link_to image_tag("del.png"),  film_path(@film), :confirm => "Na pewno chcesz usunąć film?", :method => :delete %></center>
 <div class="rw-ui-container rw-urid-0"></div>
- <h2>Komentarze</h2>
+ <h4>Komentarze</h4>
+ <p>
 <% if @film.comments.any? %>
  
  <% @film.comments.each do |comment| %>
-  <%= image_tag comment.gravatar_url %>
- <p>Autor:<br><%= comment.email %></p>
-    <p>Dodano:<br><%= comment.created_at %></p>
-   <div class="comment">
+<table>
+  <tr>
+    <td><center><%= image_tag comment.gravatar_url %></center> </td>
+    <td>
+	 <p>Autor: <%= comment.email %>   <br />Dodano: <%= comment.created_at %></p>
+	  <div class="comment">
      <b>Tekst:</b> <%= comment.body %>
    </div>
+</td>		
+<td>
 <% if user_signed_in? %>
   <% if comment.email == current_user.email %>
-    <%= link_to "Usuń komentarz", [@film, comment], :confirm => "Czy aby napewno?", :method => :delete %><br/>
-  <% end %>
+	<%= link_to image_tag("com.png"), [@film, comment], :confirm => "Czy aby napewno?", :method => :delete %>
+	  <% end %>
+	</td>
+	</tr>
+</table>
 <% end %>
 
  <% end %>
@@ -83,10 +51,10 @@
 
 <p> Narazie żadnych komentarzy. </p>
 <% end %>
-
+</p>
 <br/>
 <% if user_signed_in? %>
-<h2>Dodaj komentarz</h2>
+<h5>Dodaj komentarz</h5>
 <%= form_for [@film, @film.comments.build] do |f| %>
   <%= f.error_messages %>
   <p>
@@ -98,10 +66,49 @@
    <p><%= f.submit %></p>
 <% end %>
 <br/><br/>
+</div>
+<div style="z-index:1; left: 270px; top:606px; width:700px; position: absolute;">
+
+
+  <p>
+<b>Kategoria:</b>
+  <%= @film.tag_list %>
+<br />
+
+  <b>Tytuł oryginalny:</b>
+ 
+ <%= @film.tytul_orginalny %>
+
+<br />
+
+  <b>Reżyseria:</b>
+  <%= @film.rezyseria %>
+
+<br />
+
+  <b>Scenariusz:</b>
+  <%= @film.scenariusz %>
+
+<br />
+
+  <b>Obsada:</b>
+  <%= @film.obsada %>
+
+
+<br />
+  <b>Data premiery:</b>
+  <%= @film.data %>
+
+<br />
+
+  <b>Kraj produkcji:</b>
+  <%= @film.kraj_produkcji %>
+</p>
 
 
 
-<%= link_to 'Edytuj', edit_film_path(@film) %> |
+
 <% end %>
-<%= link_to 'Cofnij', films_path %>
+
+
 </div>
