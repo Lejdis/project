@@ -70,7 +70,7 @@
     <p>Dodano:<br><%= comment.created_at %></p>
    <div class="comment">
      <b>Tekst:</b> <%= comment.body %>
-        </div>
+   </div>
 <% if user_signed_in? %>
   <% if comment.email == current_user.email %>
     <%= link_to "Usuń komentarz", [@film, comment], :confirm => "Czy aby napewno?", :method => :delete %><br/>
@@ -80,6 +80,7 @@
  <% end %>
 
 <% else %>
+
 <p> Narazie żadnych komentarzy. </p>
 <% end %>
 
@@ -97,6 +98,7 @@
    <p><%= f.submit %></p>
 <% end %>
 <br/><br/>
+
 
 
 <%= link_to 'Edytuj', edit_film_path(@film) %> |

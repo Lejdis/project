@@ -36,7 +36,12 @@ gem 'acts-as-taggable-on'
 gem 'devise'
 gem 'devise_rpx_connectable'
 gem 'simple_form'
-gem 'gravtastic'# Bundle the extra gems:
+gem 'gravtastic'
+
+gem 'will_paginate', '3.0.pre2'
+#gem 'jquery-rails'
+
+# Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'

@@ -7,12 +7,12 @@ before_filter :only => [:index, :tags] do
   @tags = Film.tag_counts  # for tag clouds    
 end
 
-  def index
-
-@films = Film.search(params[:search]).order("created_at desc")
-respond_to do |format|format.html
-format.xml { render :xml => @films }
-end
+def index
+  @films= Film.search(params[:search]).order().paginate(:per_page => 5, :page => params[:page]) 
+	respond_to do |format|
+		format.html
+		format.xml { render :xml => @films }
+	end
 end
 
 def tags

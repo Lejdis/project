@@ -1,4 +1,4 @@
-﻿ <div style="z-index:1; left: 5px; top:375px; width:160px; position: absolute;">
+ <div style="z-index:1; left: 5px; top:375px; width:160px; position: absolute;">
 <br /><br />
  <div class="nav">Kategorie filmów</div>
 <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
@@ -33,6 +33,6 @@
 </table>
 <% end %>
 
-
+<%= will_paginate @films %> 
 </div>
 <img src = "../images/3.jpg">

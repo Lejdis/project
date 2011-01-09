@@ -4,11 +4,14 @@ class Film < ActiveRecord::Base
 
  validates_associated :comments, :dependent => :destroy
 
-
-
- def self.search(query)
-  where("(tytul || rezyseria) like ?", "%#{query}%")
-end
+ def self.search(search)  
+     if search  
+       where('(tytul || rezyseria) like ?', "%#{search}%")  
+     else  
+       scoped  
+     end  
+   end  
+ 
 
 acts_as_taggable_on :tags
   ActsAsTaggableOn::TagList.delimiter = " "
