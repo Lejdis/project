@@ -12,63 +12,68 @@
       </ul>
     </div>
   <% end %>
-
+ <center>
+<div class="step>
   <div class="field">
     <%= f.label :tytuł %><br />
-   
+  
  <%= f.text_field :tytul %>
   </div>
+  <br />
    <div class="field">
-    <%= f.label :tytuł_orginalny %><br />
+    <%= f.label :tytuł_orginalny, "Tytuł oryginalny" %><br />
  
    <%= f.text_field :tytul_orginalny %>
   </div>
+    <br />
   <div class="field">
     <%= f.label :reżyseria %><br />
   
   <%= f.text_field :rezyseria %>
   </div>
+    <br />
   <div class="field">
     <%= f.label :scenariusz %><br />
   
   <%= f.text_field :scenariusz %>
-  </div>
+  </div>    <br />
   <div class="field">
     <%= f.label :obsada %><br />
    
  <%= f.text_area :obsada, :rows => 5 %>
   </div>
-
+    <br />
 
  <div class="field" >
     <%= f.label :data, "Data premiery" %><br />
     <%= f.text_field :data %>
 
   </div>
- 
+     <br />
   <div class="field">
     <%= f.label :kraj_produkcji %><br />
     <%= f.text_field :kraj_produkcji %>
   </div>
- 
+     <br />
  <div class="field">
     <%= f.label :opis_filmu %><br />
     <%= f.text_area :opis_filmu, :rows => 5 %>
   </div>
 
- 
+     <br />
    <div class="field">
     <%= f.label :tag_list, "Kategoria"%><br/>
    
 <%= f.select :tag_list, ['sensacyjny', 'animowany', 'biograficzny', 'dokumentalny', 'dramatyczny', 'erotyczny', 'familijny', 'fantasy', 'horror', 'thriller', 'katastroficzny', 'komedia', 'melodramat', 'musical', 'obyczajowy', 'psychologiczny', 'przyrodniczy', 'western'], :include_blank => true %>
   </div>
-
+    <br />
   <div class="field">
    
  <%= f.file_field :photo %>
- </div>
+ </div>    <br />    <br />  
   <div class="actions">
     <%= f.submit %>
-  </div>
+  </div>    <br />    <br />    <br />  </div>
+  </center>
 <% end %>
 

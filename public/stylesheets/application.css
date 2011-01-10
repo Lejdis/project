@@ -92,8 +92,8 @@ h4{
 h5{
     text-align:center;
     font-size:24px;
+		background:#0e2340;
 	    color:#265ca4;
-	background:#0e2340;
     text-shadow:1px 1px 1px #edf2f8;
     font-weight:bold;
     float:left;
@@ -151,12 +151,13 @@ text-align:left;
 			         border-left: 0px #157FAF dashed;
 			         text-align: center;
 			         padding: 1px;
-                     font-size: 8px;
+                     font-size: 14px;
                      font-family: verdana;
                      text-transform: uppercase;
-                     font-weight: bold;
-                     color: #C55176;
-					 background-color: #F9CFB6;
+                 
+                        	    color:#265ca4;
+    text-shadow:1px 1px 1px #edf2f8;
+
 			         
                      }   
 					 
@@ -188,6 +189,39 @@ text-align:left;
   display: inline;
 }
 
+
+
+.step{
+    float:center;
+	align:center;
+    width:600px; 
+    border: 0px;}
+
+	label{
+
+   	    color:#265ca4;
+    text-shadow:1px 1px 1px #edf2f8;
+
+}
+
+select{
+ background:#0e2340;
+	border: solid 1px #213c60;
+	    color:#265ca4;
+    padding: 5px;
+   
+
+}
+
+ input,textarea {
+
+    background:#0e2340;
+	border: solid 1px #213c60;
+	    color:#265ca4;
+}
+
+
+
 .error_messages {
   width: 400px;
   border: 2px solid #CF0000;
@@ -217,7 +251,4 @@ text-align:left;
 }
 
 
-.css1 { font-size: 1.0em; }
-.css2 { font-size: 1.2em; }
-.css3 { font-size: 1.4em; }
-.css4 { font-size: 1.8em; }
+.css1 { font-size: 1.2em; }
