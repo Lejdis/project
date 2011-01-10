@@ -23,7 +23,7 @@
     <td><center><%= image_tag film.photo.url(:small) %></center> </td>
     <td>
 	<h3> <%= film.tytul %></h3><br />
- <b>Reżyseria</b> <%= film.rezyseria %><br /><%= ratings_for film, :static %> <% if user_signed_in? %>(Głosów: <%= film.rates.count %>) ( Komentarze: <b><%= film.comments.count %></b> )<% end %><br />
+ <b>Reżyseria</b> <%= film.rezyseria %><br /><%= ratings_for film, :static %> (Głosów: <%= film.rates.count %>) ( Komentarze: <b><%= film.comments.count %></b> )<br />
 </td>		
 <td>
 <%= link_to image_tag("more.png"), film %> 

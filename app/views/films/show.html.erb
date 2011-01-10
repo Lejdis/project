@@ -53,7 +53,7 @@
 </p>
 
 </div>
-<div style="z-index:1; left: 180px; top:740px; width:700px; position: absolute;">
+<div style="z-index:1; left: 180px; top:720px; width:700px; position: absolute;">
 <div class="opis">
 <p>
   <b>Opis filmu:</b>
@@ -63,23 +63,13 @@
 <% if user_signed_in? %>
 Głosuj: <%= ratings_for @film, :show_user_rating => true %>
 <center>
-<%= button_to 'Edytuj film', edit_film_path(@film) %> 
- <%= button_to 'Usuń film', film_path(@film), :confirm => "Na pewno chcesz usunąć film?", :method => :delete %>
+<div id="edytuj">
+<%= link_to 'Edytuj film', edit_film_path(@film) %></div>
+<div id="usun"> 
+ <%= button_to '.', film_path(@film), :confirm => "Na pewno chcesz usunąć film?", :method => :delete %></div>
  </center>
 <%end %>
- <% if user_signed_in? %>
-<h5>Dodaj komentarz</h5>
-<%= form_for [@film, @film.comments.build] do |f| %>
-  <%= f.error_messages %>
-  <p>
-   <%= image_tag current_user.gravatar_url %>
-    <%= f.label :email, "Autor" %><br>
-    <%= f.text_field :email, :value=> current_user.email, :readonly=> true %>
-  </p>
-  <p><%= f.text_area :body, :rows => 4 %></p>
-   <p><%= f.submit %></p>
-	  <% end %>
-	  <% end %>
+
  <h4>Komentarze</h4>
  <p>
  <% if user_signed_in? %>
@@ -114,5 +104,17 @@ Głosuj: <%= ratings_for @film, :show_user_rating => true %>
 <p> Komentarze dostępne po zalogowaniu. </p>
 <% end %>
 </p>
-
+<% if user_signed_in? %>
+<h5>Dodaj komentarz</h5>
+<%= form_for [@film, @film.comments.build] do |f| %>
+  <%= f.error_messages %>
+  <p>
+   <%= image_tag current_user.gravatar_url %>
+    <%= f.label :email, "Autor" %><br>
+    <%= f.text_field :email, :value=> current_user.email, :readonly=> true %>
+  </p>
+  <p><%= f.text_area :body, :rows => 4 %></p>
+   <p><%= f.submit %></p>
+	  <% end %>
+	  <% end %>
 </div>

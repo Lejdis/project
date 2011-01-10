@@ -220,7 +220,12 @@ select{
 	    color:#265ca4;
 }
 
-
+#usun input {
+height:160px;
+width: 160px;
+background: url('../images/del.png');
+border: 0px
+}
 
 .error_messages {
   width: 400px;

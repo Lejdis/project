@@ -16,8 +16,8 @@ def index
 end
 
 def tags
-  @films = Film.tagged_with(params[:name])
-  render 'index'
+@films = Film.tagged_with(params[:name]).order().paginate(:per_page => 4, :page => params[:page]) 
+render 'index'
 end
 
   # GET /films/1
