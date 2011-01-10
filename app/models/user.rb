@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   include Gravtastic
   is_gravtastic!
   
+  ajaxful_rater
+  
   end

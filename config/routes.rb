@@ -1,8 +1,9 @@
-Filmweb::Application.routes.draw do
+Filmweb::Application.routes.draw do |map|
   devise_for :users
 
  # resources :comments
 
+ 
   resources :films do
    resources :comments
    collection do 
@@ -10,6 +11,8 @@ Filmweb::Application.routes.draw do
   end
  end
 
+map.resources :films, :member => {:rate => :get }
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

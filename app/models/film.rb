@@ -16,7 +16,7 @@ class Film < ActiveRecord::Base
 acts_as_taggable_on :tags
   ActsAsTaggableOn::TagList.delimiter = " "
 
- has_attached_file :photo, :styles => { :small => "100x100>" },
+ has_attached_file :photo, :styles => { :small => "75x100>" },
                   :url  => "/assets/films/:id/:style/:basename.:extension",
                   :path => ":rails_root/public/assets/films/:id/:style/:basename.:extension"
 
@@ -28,5 +28,6 @@ validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image
 validates_presence_of :tytul, :message => 'musi zostac podany'
 validates_format_of :data, :with => /^(19|20)\d\d[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])$/i, :message => 'zla, dobry format to (r-m-d)'
 
+ajaxful_rateable :stars => 5, :allow_update => false
 
 end

@@ -2,10 +2,11 @@
 <html>
   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title><%= content_for?(:title) ? yield(:title) : "Filmweb" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Movies" %></title>
     <%= stylesheet_link_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
-    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application", "jquery.rails.js" %>
-    <%= csrf_meta_tag %>
+    <%= javascript_include_tag "controls.js", "effects.js", "dragdrop.js", "prototype.js", "jquery.rails.js", "http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>
+    <%= ajaxful_rating_style %>
+	<%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
   <body>

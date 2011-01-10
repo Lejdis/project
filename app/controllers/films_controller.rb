@@ -8,7 +8,7 @@ before_filter :only => [:index, :tags] do
 end
 
 def index
-  @films= Film.search(params[:search]).order().paginate(:per_page => 5, :page => params[:page]) 
+  @films= Film.search(params[:search]).order('created_at desc').paginate(:per_page => 4, :page => params[:page]) 
 	respond_to do |format|
 		format.html
 		format.xml { render :xml => @films }
@@ -60,8 +60,19 @@ end
   # PUT /films/1.xml
   def update
     @film = Film.find(params[:id])
-    @film.update_attributes(params[:film])
-    respond_with @film
+    if @film.update_attributes(params[:film])
+    #respond_with @film
+	
+	
+    render :action => 'show'
+     # redirect_to @film
+    else
+      render :action => 'edit'
+    end
+	######bylo tak
+	#@film = Film.find(params[:id])
+   # @film.update_attributes(params[:film])
+    #respond_with @film
   end
 
   # DELETE /films/1
@@ -70,5 +81,20 @@ end
     @film = Film.find(params[:id])
     @film.destroy
     respond_with(@film)
+#    redirect_to index
   end
+  
+   def rate
+    @film = Film.find(params[:id])
+    
+	@film.rate(params[:stars], current_user)
+	redirect_to @film
+    # render :action => 'show'
+	#render :action => :update do |page|
+      #page.replace_html @film.wrapper_dom_id(params), ratings_for(@film, params.merge(:wrap => false))
+     # page.visual_effect :highlight, @film.wrapper_dom_id(params)
+    #end
+	#render :action => 'show'
+  end
+  
 end

@@ -2,7 +2,7 @@
 <br /><br />
  <div class="nav">Kategorie filmów</div>
 <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  <%= link_to tag.name, tags_films_path(:name=>tag.name), :class => css_class %>
+  <%= link_to tag.name, tags_films_path(:name=>tag.name), :class => css_class %><br/>
 <% end %>
 </div>  
  <div style="z-index:1; left: 40px; top:136px; width:160px; position: absolute;">
@@ -24,7 +24,7 @@
     <td>
 	<h3> <%= film.tytul %></h3><br />
  <b>Reżyseria</b> <%= film.rezyseria %><br />
- <b>Scenariusz</b> <%= film.rezyseria %><br />
+ <b>Scenariusz</b> <%= film.scenariusz %><br/><%= ratings_for film, :static %>(Głosów: <%= film.rates.count %>)<div style="text-align:right">( Komentarze: <b><%= film.comments.count %></b> )</div><br />
 </td>		
 <td>
 <%= link_to image_tag("more.png"), film %> 
@@ -33,6 +33,8 @@
 </table>
 <% end %>
 
-<%= will_paginate @films %> 
+<center>
+<%= will_paginate @films, :previous_label => '< Poprzednia', :next_label => 'Następna >', :separator => '   '  %> 
+</center>
 </div>
 <img src = "../images/3.jpg">

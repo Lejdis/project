@@ -25,10 +25,9 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
- group :development, :test do
+# group :development, :test do
 #   gem 'webrat'
-gem 'ajaxful_rating'
- end
+# end
 gem 'responders'
 gem 'nifty-generators'
 gem 'acts-as-taggable-on'
@@ -39,13 +38,4 @@ gem 'simple_form'
 gem 'gravtastic'
 
 gem 'will_paginate', '3.0.pre2'
-#gem 'jquery-rails'
-
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for the local environment. Make sure to
-# put te
+gem 'ajaxful_rating', '3.0.0.beta3'

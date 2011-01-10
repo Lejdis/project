@@ -1,4 +1,4 @@
-﻿<%= form_for @film , :html => { :multipart => true } do |f| %>
+<%= form_for @film , :html => { :multipart => true } do |f| %>
   <% if @film.errors.any? %>
     <div id="error_explanation">
    
@@ -60,7 +60,7 @@
    <div class="field">
     <%= f.label :tag_list, "Kategoria"%><br/>
    
-<%= f.select :tag_list, ['sensacyjny', 'animowany', 'biograficzny', 'dokumentalny', 'dramatyczny', 'erotyczny', 'familijny', 'fantasy', 'horror', 'thriller', 'katastroficzny', 'komedia', 'melodramat', 'musical', 'obyczajowy', 'psychologiczny', 'przyrodniczy', 'western'] %>
+<%= f.select :tag_list, ['sensacyjny', 'animowany', 'biograficzny', 'dokumentalny', 'dramatyczny', 'erotyczny', 'familijny', 'fantasy', 'horror', 'thriller', 'katastroficzny', 'komedia', 'melodramat', 'musical', 'obyczajowy', 'psychologiczny', 'przyrodniczy', 'western'], :include_blank => true %>
   </div>
 
   <div class="field">

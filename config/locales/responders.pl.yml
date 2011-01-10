@@ -6,5 +6,5 @@ pl:
       update:
         notice: ' Wyedytowano.'
       destroy:
-        notice: ' Usunieto'
-        alert: 'nie można usunąć'
+        notice: ' Usunięto'
+        alert: 'Nie można usunąć'

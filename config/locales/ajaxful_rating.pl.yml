@@ -1,0 +1,6 @@
+pl:
+ ajaxful_rating:
+      helper:
+         global_average: "Ocena: %{value} / %{max}"
+         user_rating: "Twoja ocena: %{value} / %{max}"
+         hover: " %{value} / %{max}"

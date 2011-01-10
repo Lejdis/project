@@ -12,15 +12,19 @@
 
 </div>
 <div style="z-index:1; left: 180px; top:620px; width:700px; position: absolute;">
-<%= image_tag @film.photo.url(:small) %>
+<%= image_tag @film.photo.url(:small) %><br/><br/>
 <div class="opis">
 <p>
   <b>Opis filmu:</b>
   <%= @film.opis_filmu %>
- </p> </div>
+ </p> 
+</div>
+<% if user_signed_in? %>
+Głosuj: <%= ratings_for @film, :show_user_rating => true %>
 <center>
-<%= link_to image_tag("edit.png"), edit_film_path(@film) %>  <%= link_to image_tag("del.png"),  film_path(@film), :confirm => "Na pewno chcesz usunąć film?", :method => :delete %></center>
-<div class="rw-ui-container rw-urid-0"></div>
+<%= link_to image_tag("edit.png"), edit_film_path(@film) %> 
+ <%= button_to image_tag("del.png"),  film_path(@film), :confirm => "Na pewno chcesz usunąć film?", :method => :delete %></center>
+<%end %>
  <h4>Komentarze</h4>
  <p>
 <% if @film.comments.any? %>
@@ -66,7 +70,8 @@
    <p><%= f.submit %></p>
 <% end %>
 <br/><br/>
-</div>
+</div><% end %>
+
 <div style="z-index:1; left: 270px; top:606px; width:700px; position: absolute;">
 
 
@@ -104,11 +109,5 @@
   <b>Kraj produkcji:</b>
   <%= @film.kraj_produkcji %>
 </p>
-
-
-
-
-<% end %>
-
 
 </div>
