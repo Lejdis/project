@@ -227,6 +227,13 @@ background: url('../images/del.png');
 border: 0px
 }
 
+#uscom input {
+height:70px;
+width: 185px;
+background: url('../images/com.png');
+border: 0px
+}
+
 .error_messages {
   width: 400px;
   border: 2px solid #CF0000;

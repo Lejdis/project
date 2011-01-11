@@ -21087,3 +21087,383 @@ Started GET "/films/17/edit" for 127.0.0.1 at 2011-01-11 01:57:59 +0100
 Rendered films/_form.html.erb (96.0ms)
 Rendered films/edit.html.erb within layouts/application (171.0ms)
 Completed 200 OK in 574ms (Views: 234.0ms | ActiveRecord: 7.0ms)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: C:/Users/Dodzia/project/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at C:/Users/Dodzia/project/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at C:/Users/Dodzia/project/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 09:26:32 +0100
+  Processing by FilmsController#index as HTML
+  [1m[36mSQL (92.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mFilm Load (2.0ms)[0m  SELECT "films".* FROM "films" ORDER BY created_at desc LIMIT 4 OFFSET 0
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "films"[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN films ON films.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Film') AND (taggings.taggable_id IN(SELECT films.id FROM "films")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 17 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 17)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 16)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 15 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 15)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 14)
+Rendered films/index.html.erb within layouts/application (1023.1ms)
+Completed 200 OK in 1932ms (Views: 1298.1ms | ActiveRecord: 107.0ms)
+
+
+Started GET "/films/16" for 127.0.0.1 at 2011-01-11 09:38:26 +0100
+  Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mSQL (8.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mFilm Load (0.0ms)[0m  SELECT "films".* FROM "films" WHERE ("films"."id" = 16) LIMIT 1
+  [1m[36mUser Load (4.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 16) AND ("taggings".taggable_type = 'Film')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mRate Load (1.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 16)[0m
+Rendered films/show.html.erb within layouts/application (687.0ms)
+Completed 200 OK in 1122ms (Views: 885.1ms | ActiveRecord: 15.0ms)
+
+
+Started POST "/films/16/comments" for 127.0.0.1 at 2011-01-11 09:38:36 +0100
+  Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3niXwhzOUEMSRE0fi9S9l9a4OnHUo6xeW3LsiDeihgg=", "comment"=>{"email"=>"dodziapio@gmail.com", "body"=>"oooogien"}, "commit"=>"Utwórz ", "film_id"=>"16"}
+  [1m[35mUser Load (5.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mFilm Load (1.0ms)[0m  SELECT "films".* FROM "films" WHERE ("films"."id" = 16) LIMIT 1
+  [1m[36mAREL (36.0ms)[0m  [1mINSERT INTO "comments" ("film_id", "author", "body", "created_at", "updated_at", "email") VALUES (16, NULL, 'oooogien', '2011-01-11 08:38:37.378442', '2011-01-11 08:38:37.378442', 'dodziapio@gmail.com')[0m
+Redirected to http://localhost:3000/films/16
+Completed 302 Found in 1908ms
+
+
+Started GET "/films/16" for 127.0.0.1 at 2011-01-11 09:38:38 +0100
+  Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mSQL (14.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mFilm Load (0.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE ("films"."id" = 16) LIMIT 1[0m
+  [1m[35mUser Load (3.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 16) AND ("taggings".taggable_type = 'Film')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mRate Load (3.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 16)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".film_id = 16)[0m
+Rendered films/show.html.erb within layouts/application (1389.1ms)
+Completed 200 OK in 1667ms (Views: 1457.1ms | ActiveRecord: 21.0ms)
+
+
+Started GET "/films/16" for 127.0.0.1 at 2011-01-11 09:39:38 +0100
+  Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mSQL (3.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mFilm Load (1.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE ("films"."id" = 16) LIMIT 1[0m
+  [1m[35mUser Load (4.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (2.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 16) AND ("taggings".taggable_type = 'Film')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mRate Load (2.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 16)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".film_id = 16)[0m
+Rendered films/show.html.erb within layouts/application (524.0ms)
+Completed 200 OK in 789ms (Views: 599.0ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/films/16/comments/8" for 127.0.0.1 at 2011-01-11 09:39:43 +0100
+  Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3niXwhzOUEMSRE0fi9S9l9a4OnHUo6xeW3LsiDeihgg=", "film_id"=>"16", "id"=>"8"}
+  [1m[35mUser Load (3.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mFilm Load (1.0ms)[0m  SELECT "films".* FROM "films" WHERE ("films"."id" = 16) LIMIT 1
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".film_id = 16) AND ("comments"."id" = 8) LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  DELETE FROM "comments" WHERE ("comments"."id" = 8)
+Redirected to http://localhost:3000/films/16
+Completed 302 Found in 1263ms
+
+
+Started GET "/films/16" for 127.0.0.1 at 2011-01-11 09:39:45 +0100
+  Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mFilm Load (3.0ms)[0m  SELECT "films".* FROM "films" WHERE ("films"."id" = 16) LIMIT 1
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 16) AND ("taggings".taggable_type = 'Film')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mRate Load (1.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 16)[0m
+Rendered films/show.html.erb within layouts/application (456.0ms)
+Completed 200 OK in 662ms (Views: 523.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/films/16" for 127.0.0.1 at 2011-01-11 09:40:20 +0100
+  Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mFilm Load (1.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE ("films"."id" = 16) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 16) AND ("taggings".taggable_type = 'Film')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mRate Load (2.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 16)
+Rendered films/show.html.erb within layouts/application (501.0ms)
+Completed 200 OK in 767ms (Views: 566.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/films/16/edit" for 127.0.0.1 at 2011-01-11 09:40:24 +0100
+  Processing by FilmsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mFilm Load (4.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE ("films"."id" = 16) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 16) AND ("taggings".taggable_type = 'Film')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered films/_form.html.erb (60.0ms)
+Rendered films/edit.html.erb within layouts/application (142.0ms)
+Completed 200 OK in 589ms (Views: 236.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/films/16" for 127.0.0.1 at 2011-01-11 09:40:40 +0100
+  Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mFilm Load (1.0ms)[0m  SELECT "films".* FROM "films" WHERE ("films"."id" = 16) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 16) AND ("taggings".taggable_type = 'Film')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mRate Load (1.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 16)[0m
+Rendered films/show.html.erb within layouts/application (780.0ms)
+Completed 200 OK in 982ms (Views: 852.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/films/16" for 127.0.0.1 at 2011-01-11 09:40:52 +0100
+  Processing by FilmsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mFilm Load (1.0ms)[0m  [1mSELECT "films".* FROM "films" WHERE ("films"."id" = 16) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 16) AND ("taggings".taggable_type = 'Film')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mRate Load (1.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "rates".* FROM "rates" WHERE ("rates".rateable_id = 16 AND "rates".rateable_type = 'Film' AND ("rates"."dimension" IS NULL)) AND ("rates"."rater_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".film_id = 16)
+Rendered films/show.html.erb within layouts/application (737.0ms)
+Completed 200 OK in 1112ms (Views: 806.0ms | ActiveRecord: 7.0ms)
