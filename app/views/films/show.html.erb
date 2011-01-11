@@ -64,7 +64,7 @@
 Głosuj: <%= ratings_for @film, :show_user_rating => true %>
 <center>
 <div id="edytuj">
-<%= link_to 'Edytuj film', edit_film_path(@film) %></div>
+<%= link_to image_tag("edit.png"), edit_film_path(@film) %></div>
 <div id="usun"> 
  <%= button_to '.', film_path(@film), :confirm => "Na pewno chcesz usunąć film?", :method => :delete %></div>
  </center>
