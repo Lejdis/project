@@ -56,7 +56,7 @@
 <div style="z-index:1; left: 180px; top:720px; width:700px; position: absolute;">
 <div class="opis">
 <p>
-  <b>Opis filmu:</b>
+  <b>Opis filmu:</b><br/>
   <%= @film.opis_filmu %>
  </p> 
 </div>
@@ -73,7 +73,10 @@
  <h4>Komentarze</h4>
  <p>
  <% if user_signed_in? %>
-<% if @film.comments.any? %>
+ <% if @film.comments.any? %>
+ 
+ 
+ 
  
  <% @film.comments.each do |comment| %>
 <table>
@@ -89,33 +92,41 @@
   <% if comment.email == current_user.email %>
   <div id="uscom"> 
 <%= button_to '.', [@film, comment], :confirm => "Czy aby napewno?", :method => :delete %></div>
-	</td>
+	
+<% end %>
+</td>
 	</tr>
 </table><br />
-<% end %>
-
  <% end %>
 
+ 
+ 
+ 
 <% else %>
-
 <p> Narazie żadnych komentarzy. </p>
 <% end %>
-	  <% else %>
 
-<p> Komentarze dostępne po zalogowaniu. </p>
-<% end %>
-</p>
-<% if user_signed_in? %>
+
+
+
+
 <h5>Dodaj komentarz</h5>
 <%= form_for [@film, @film.comments.build] do |f| %>
   <%= f.error_messages %>
   <p>
    <%= image_tag current_user.gravatar_url %>
-    <%= f.label :email, "Autor" %><br>
+    <%= f.label :email, "Autor" %>
     <%= f.text_field :email, :value=> current_user.email, :readonly=> true %>
   </p>
   <p><%= f.text_area :body, :rows => 4 %></p>
    <p><%= f.submit %></p>
 	  <% end %>
-	  <% end %>
+	
+	  
+	  
+	  <% else %>
+
+<p> Komentarze dostępne po zalogowaniu. </p>
+<% end %>
+</p>
 </div>
