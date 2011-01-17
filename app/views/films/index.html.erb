@@ -1,6 +1,6 @@
  <div style="z-index:1; left: 5px; top:375px; width:160px; position: absolute;">
 <br /><br />
- <div class="nav">Kategorie filmów</div><center>
+ <div class="nav">Kategorie</div><center>
 <% tag_cloud(@tags, %w(css1)) do |tag, css_class| %>
   <%= link_to tag.name, tags_films_path(:name=>tag.name), :class => css_class %><br/>
 <% end %></center>
@@ -33,7 +33,7 @@
 <% end %>
 
 <center>
-<%= will_paginate @films, :previous_label => '< Poprzednia', :next_label => 'Następna >', :separator => '   '  %> 
+<p><%= will_paginate @films, :previous_label => '< Poprzednia', :next_label => 'Następna >', :separator => '   '  %> </p>
 </center>
 </div>
 <img src = "../images/3.jpg">

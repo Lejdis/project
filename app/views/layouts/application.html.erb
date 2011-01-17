@@ -11,17 +11,15 @@
   </head>
   <body>
 <div class="top">
-<div style="z-index:1; left:610px; top:210px; position: absolute;"> 
+<div style="z-index:1; left:640px; top:228px; position: absolute;"> 
   <% if user_signed_in? %>  
-<br> Zalogowany jako <%= current_user.email %>. <br>To nie Ty?  
-    <%= link_to "Wyloguj", destroy_user_session_path %>  
+    <%= link_to image_tag("wylog.png"), destroy_user_session_path %>  
   <% else %>  
-   
-<h2><%= link_to_rpx "Logowanie", user_session_url %><!--%= link_to "Sign in", new_user_session_path %--!> </h2>
+<%= link_to_rpx image_tag("log.png"), user_session_url %><!--%= link_to "Sign in", new_user_session_path %--!>
   <% end %>  
   </div>
   <div style="z-index:1; left: 272px; top:310px; position: absolute;"> 
-<p>Wyszukaj po tytule lub reżyserze:</p>
+<p><span style="color:#ffffff;"><b>Wyszukaj po tytule lub reżyserze:</b></span></p>
 <%= form_tag films_path, :method => 'get' do %>  
     
     <%= text_field_tag :search, params[:search] %>  
